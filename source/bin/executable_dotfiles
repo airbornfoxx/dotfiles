@@ -1,0 +1,56 @@
+#!/bin/bash
+
+DOTFILES_REPO=$HOME/.dotfiles
+DOTFILES_CONFIG_PATH=$HOME/.config/dotfiles/dotfiles.toml
+
+MACOS=$DOTFILES_REPO/macos
+
+set -e
+
+displayUsageAndExit() {
+    echo ""
+    echo "dotfiles - Manage dotfiles, install/update software, and setup MacOS preferences."
+    echo ""
+    echo "Usage: dotfiles [command]"
+    echo ""
+    echo "Commands:"
+    echo "  [chezmoi]         Manage dotfiles using chezmoi"
+    echo "  install rosetta   Install Rosetta"
+    exit
+}
+
+progressMessage() {
+    printf "\r\033[00;34m$@\033[0m\n"
+}
+
+installRosetta() {
+    if ! /usr/bin/pgrep oahd >/dev/null 2>&1; then
+        progressMessage "Installing Rosetta..."
+        $MACOS/install-rosetta.sh
+    else
+        progressMessage "Rosetta already installed"
+    fi
+}
+
+runChezmoi() {
+    chezmoi -c $DOTFILES_CONFIG_PATH $@
+}
+
+case "$1" in
+    install)
+        case "$2" in
+            rosetta)
+                installRosetta
+                ;;
+        esac
+        ;;
+    help)
+        displayUsageAndExit
+        ;;
+    *)
+        if [ -z "$1" ]; then
+            displayUsageAndExit
+        fi
+        runChezmoi $@
+        ;;
+esac

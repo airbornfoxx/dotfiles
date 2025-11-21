@@ -1,0 +1,5 @@
+#!/bin/sh
+
+if ! /usr/bin/pgrep oahd >/dev/null 2>&1 ; then
+    sudo softwareupdate --install-rosetta  --agree-to-license
+fi

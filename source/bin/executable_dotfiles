@@ -18,14 +18,25 @@ displayUsageAndExit() {
     echo "  [chezmoi]         Manage dotfiles using chezmoi"
     echo "  install rosetta   Install Rosetta"
     echo "  install bundle    Install Homebrew bundle"
+    echo "  update all        Update all software (System/Homebrew/AppStore)"
+    echo "  update system     Update MacOS system software"
     echo "  update brew       Update Homebrew software (formulae/casks)"
+    echo "  update appstore   Update App Store software"
     echo "  macos dock        Setup MacOS Dock"
     echo "  macos defaults    Apply MacOS Defaults"
     exit
 }
 
+startMessage() {
+    printf "\r\033[00;36m$@\033[0m\n"
+}
+
 progressMessage() {
     printf "\r\033[00;34m$@\033[0m\n"
+}
+
+successMessage() {
+    printf "\r[ \033[00;32mOK\033[0m ] $@\n"
 }
 
 installRosetta() {
@@ -50,10 +61,28 @@ installHomebrewBundle() {
     $HOMEBREW/install-bundle.sh
 }
 
-updateHomebrew() {
+updateAllSoftware() {
+    startMessage "Updating all software..."
+    updateSystemSoftware
+    updateHomebrewSoftware
+    updateAppStoreSoftware
+    successMessage "All software has been updated."
+}
+
+updateSystemSoftware() {
+    progressMessage "Checking for system updates..."
+    $MACOS/update-system.sh
+}
+
+updateHomebrewSoftware() {
     installHomebrew
     progressMessage "Updating Homebrew formulae and casks..."
     $HOMEBREW/update-homebrew.sh
+}
+
+updateAppStoreSoftware() {
+    progressMessage "Checking for App Store updates..."
+    $MACOS/update-appstore.sh
 }
 
 setupDock() {
@@ -82,8 +111,17 @@ case "$1" in
         ;;
     update)
         case "$2" in
+            all)
+                updateAllSoftware
+                ;;
+            system)
+                updateSystemSoftware
+                ;;
             brew)
-                updateHomebrew
+                updateHomebrewSoftware
+                ;;
+            appstore)
+                updateAppStoreSoftware
                 ;;
             *)
                 runChezmoi $@

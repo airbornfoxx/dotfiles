@@ -18,6 +18,7 @@ displayUsageAndExit() {
     echo "  [chezmoi]         Manage dotfiles using chezmoi"
     echo "  install rosetta   Install Rosetta"
     echo "  install bundle    Install Homebrew bundle"
+    echo "  update brew       Update Homebrew software (formulae/casks)"
     exit
 }
 
@@ -47,6 +48,12 @@ installHomebrewBundle() {
     $HOMEBREW/install-bundle.sh
 }
 
+updateHomebrew() {
+    installHomebrew
+    progressMessage "Updating Homebrew formulae and casks..."
+    $HOMEBREW/update-homebrew.sh
+}
+
 runChezmoi() {
     chezmoi -c $DOTFILES_CONFIG_PATH $@
 }
@@ -59,6 +66,13 @@ case "$1" in
                 ;;
             bundle)
                 installHomebrewBundle
+        esac
+        ;;
+    update)
+        case "$2" in
+            brew)
+                updateHomebrew
+                ;;
         esac
         ;;
     help)

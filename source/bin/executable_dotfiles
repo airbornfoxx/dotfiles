@@ -20,6 +20,7 @@ displayUsageAndExit() {
     echo "  install bundle    Install Homebrew bundle"
     echo "  update brew       Update Homebrew software (formulae/casks)"
     echo "  macos dock        Setup MacOS Dock"
+    echo "  macos defaults    Apply MacOS Defaults"
     exit
 }
 
@@ -60,6 +61,11 @@ setupDock() {
     $MACOS/setup-dock.sh
 }
 
+applyMacOSDefaults() {
+    progressMessage "Applying macOS Defaults..."
+    $MACOS/apply-defaults.sh
+}
+
 runChezmoi() {
     chezmoi -c $DOTFILES_CONFIG_PATH $@
 }
@@ -88,6 +94,9 @@ case "$1" in
         case "$2" in
             dock)
                 setupDock
+                ;;
+            defaults)
+                applyMacOSDefaults
                 ;;
         esac
         ;;

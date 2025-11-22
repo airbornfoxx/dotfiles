@@ -19,6 +19,7 @@ displayUsageAndExit() {
     echo "  install rosetta   Install Rosetta"
     echo "  install bundle    Install Homebrew bundle"
     echo "  update brew       Update Homebrew software (formulae/casks)"
+    echo "  macos dock        Setup MacOS Dock"
     exit
 }
 
@@ -54,6 +55,11 @@ updateHomebrew() {
     $HOMEBREW/update-homebrew.sh
 }
 
+setupDock() {
+    progressMessage "Setting up Dock..."
+    $MACOS/setup-dock.sh
+}
+
 runChezmoi() {
     chezmoi -c $DOTFILES_CONFIG_PATH $@
 }
@@ -75,6 +81,13 @@ case "$1" in
                 ;;
             *)
                 runChezmoi $@
+                ;;
+        esac
+        ;;
+    macos)
+        case "$2" in
+            dock)
+                setupDock
                 ;;
         esac
         ;;

@@ -3,6 +3,7 @@
 ###########################################################
 
 brew "chezmoi"
+brew "dockutil"
 brew "git"
 brew "htop"
 brew "mas"

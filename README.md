@@ -1,7 +1,7 @@
 # dotfiles
 
 
-## Prerequisites
+## Pre-Install Steps
 1. Update MacOS Software (General > Software Update)
 1. Sign in to iCloud and App Store
 1. Give Terminal Full Disk Access (Privacy & Security)
@@ -15,4 +15,14 @@ sudo xcode-select --install
 ```
 sh -c "$(curl -fsLS get.chezmoi.io)" -- -b $HOME/bin init airbornfoxx --config $HOME/.config/dotfiles/dotfiles.toml --source $HOME/.dotfiles --config-path $HOME/.config/dotfiles/dotfiles.toml --apply && rm -rf $HOME/bin
 ```
+
+## Post-Install Steps
+1. Install vim plugins (open vim and run)
+```
+:PlugInstall
+```
+1. Configure powerlevel10k theme
+ ```
+ p10k configure
+ ```
 

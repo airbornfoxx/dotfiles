@@ -1,0 +1,10 @@
+<snippet>
+<content><![CDATA[
+{{plantUML}}
+${0}
+{{/plantUML}}
+]]></content>
+<tabTrigger>plant</tabTrigger>
+<description>Create plant uml wiki tags</description>
+<scope>text.plain, text.html.markdown, meta.paragraph.markdown</scope>
+</snippet>

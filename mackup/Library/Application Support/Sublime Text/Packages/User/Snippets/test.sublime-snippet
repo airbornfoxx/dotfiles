@@ -1,0 +1,12 @@
+<snippet>
+<content><![CDATA[
+/** @test */
+public function ${1}()
+{
+    ${0}
+}
+]]></content>
+<tabTrigger>test</tabTrigger>
+<description>PHPUnit Test Method</description>
+<scope>embedding.php, text.html.basic, meta.embedded.block.php, source.php, meta.class.php, meta.block.php, comment.block.php, punctuation.definition.comment.php</scope>
+</snippet>

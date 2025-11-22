@@ -1,0 +1,25 @@
+{
+	"always_show_minimap_viewport": true,
+	"bold_folder_labels": true,
+	"close_windows_when_empty": true,
+	"color_scheme": "Packages/Material Theme/schemes/Material-Theme-Palenight.tmTheme",
+	"ensure_newline_at_eof_on_save": true,
+	"font_face": "Roboto Mono",
+	"font_size": 16,
+	"line_padding_bottom": 3,
+	"line_padding_top": 3,
+	"overlay_scroll_bars": "enabled",
+	"phpunit-sublime-terminal": "iTerm",
+	"save_on_focus_lost": true,
+	"scroll_past_end": true,
+	"theme": "Material-Theme-Palenight.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_automatic_white_space": false,
+	"trim_trailing_white_space_on_save": true,
+	"use_simple_full_screen": true,
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"index_files": false,
+}

@@ -1,0 +1,24 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"A File Icon",
+		"AdvancedNewFile",
+		"DocBlockr",
+		"Dracula Color Scheme",
+		"Emmet",
+		"Indent XML",
+		"Laravel Blade",
+		"Material Theme",
+		"Package Control",
+		"PHP Companion",
+		"Pretty JSON",
+		"ProjectManager",
+		"SideBarEnhancements",
+		"SnippetMaker",
+		"WordingStatus",
+	],
+}

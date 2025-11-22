@@ -3,18 +3,38 @@
 ###########################################################
 
 brew "chezmoi"
+brew "git"
+brew "htop"
+brew "mas"
+brew "vim"
+brew "zsh"
 
 
 ###########################################################
 ### Casks
 ###########################################################
 
-# cask
+cask "1password"
+cask "1password-cli"
+cask "alfred"
+cask "cleanmymac"
+cask "dropbox"
+cask "font-meslo-lg-nerd-font"
+cask "google-chrome"
+cask "iterm2"
+cask "jetbrains-toolbox"
+cask "microsoft-office"
+cask "mysides"
+cask "spotify"
+cask "sublime-text"
 
 
 ###########################################################
 ### Mac App Store
 ###########################################################
 
-# mas
+mas "Amphetamine", id: 937984704
+mas "ColorSlurp", id: 1287239339
+mas "Peek", id: 1554235898
+mas "The Unarchiver", id: 425424353
 

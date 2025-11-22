@@ -73,6 +73,9 @@ case "$1" in
             brew)
                 updateHomebrew
                 ;;
+            *)
+                runChezmoi $@
+                ;;
         esac
         ;;
     help)

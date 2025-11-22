@@ -2,9 +2,12 @@
 
 
 ## Prerequisites
+1. Update MacOS Software (General > Software Update)
+1. Sign in to iCloud and App Store
+1. Give Terminal Full Disk Access (Privacy & Security)
+1. Install Command Line Tools
 ```
 sudo xcode-select --install
-sudo softwareupdate --install --all --restart
 ```
 
 ## Download & Install

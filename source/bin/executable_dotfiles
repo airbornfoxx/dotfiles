@@ -3,6 +3,7 @@
 DOTFILES_REPO=$HOME/.dotfiles
 DOTFILES_CONFIG_PATH=$HOME/.config/dotfiles/dotfiles.toml
 
+HOMEBREW=$DOTFILES_REPO/homebrew
 MACOS=$DOTFILES_REPO/macos
 
 set -e
@@ -16,6 +17,7 @@ displayUsageAndExit() {
     echo "Commands:"
     echo "  [chezmoi]         Manage dotfiles using chezmoi"
     echo "  install rosetta   Install Rosetta"
+    echo "  install bundle    Install Homebrew bundle"
     exit
 }
 
@@ -32,6 +34,19 @@ installRosetta() {
     fi
 }
 
+installHomebrew() {
+    if test ! $(which brew); then
+        progressMessage "Installing Homebrew..."
+        $HOMEBREW/install-homebrew.sh
+    fi
+}
+
+installHomebrewBundle() {
+    installHomebrew
+    progressMessage "Installing dependencies from the Brewfile..."
+    $HOMEBREW/install-bundle.sh
+}
+
 runChezmoi() {
     chezmoi -c $DOTFILES_CONFIG_PATH $@
 }
@@ -42,6 +57,8 @@ case "$1" in
             rosetta)
                 installRosetta
                 ;;
+            bundle)
+                installHomebrewBundle
         esac
         ;;
     help)

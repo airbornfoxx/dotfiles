@@ -1,0 +1,2 @@
+.oh-my-zsh/cache/*
+.zsh_custom/themes/powerlevel10k/**/*.zwc

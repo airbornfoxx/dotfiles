@@ -101,6 +101,10 @@ runChezmoi() {
 }
 
 case "$1" in
+    chezmoi)
+        shift
+        runChezmoi $@
+        ;;
     install)
         case "$2" in
             rosetta)

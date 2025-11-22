@@ -18,6 +18,7 @@ displayUsageAndExit() {
     echo "  [chezmoi]         Manage dotfiles using chezmoi"
     echo "  install rosetta   Install Rosetta"
     echo "  install bundle    Install Homebrew bundle"
+    echo "  edit bundle       Edit Homebrew bundle"
     echo "  update all        Update all software (System/Homebrew/AppStore)"
     echo "  update system     Update MacOS system software"
     echo "  update brew       Update Homebrew software (formulae/casks)"
@@ -107,6 +108,13 @@ case "$1" in
                 ;;
             bundle)
                 installHomebrewBundle
+        esac
+        ;;
+    edit)
+        case "$2" in
+            bundle)
+                vim $HOMEBREW/Brewfile
+                ;;
         esac
         ;;
     update)

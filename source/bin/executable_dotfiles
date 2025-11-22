@@ -53,6 +53,7 @@ installHomebrew() {
     if test ! $(which brew); then
         progressMessage "Installing Homebrew..."
         $HOMEBREW/install-homebrew.sh
+        source $HOMEBREW/environment.zsh
     fi
 }
 

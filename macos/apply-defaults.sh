@@ -85,6 +85,7 @@ defaults write com.apple.commerce AutoUpdate -bool true
 defaults write -globalDomain com.apple.swipescrolldirection -bool false
 
 # Set tap to click
+defaults write -globalDomain com.apple.mouse.tapBehavior -bool true
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 
 

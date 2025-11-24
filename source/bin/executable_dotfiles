@@ -118,7 +118,10 @@ case "$1" in
     edit)
         case "$2" in
             bundle)
-                vim $HOMEBREW/Brewfile
+                subl $HOMEBREW/Brewfile
+                ;;
+            *)
+                subl $DOTFILES_REPO
                 ;;
         esac
         ;;

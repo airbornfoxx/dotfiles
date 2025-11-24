@@ -19,6 +19,8 @@
 	"use_simple_full_screen": true,
 	"ignored_packages":
 	[
+		"Package Control",
+		"ProjectManager",
 		"Vintage",
 	],
 	"index_files": false,

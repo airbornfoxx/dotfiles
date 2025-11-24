@@ -18,11 +18,12 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- -b $HOME/bin init airbornfoxx --config $
 
 ## Post-Install Steps
 1. Install vim plugins (open vim and run)
-```
-:PlugInstall
-```
+    ```
+    :PlugInstall
+    ```
 1. Configure powerlevel10k theme
- ```
- p10k configure
- ```
+    ```
+    p10k configure
+    ```
+1. Install Alfred Dracula Theme (Double-click ```alfred/dracula.alfredappearance```)
 

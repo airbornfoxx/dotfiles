@@ -25,5 +25,5 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- -b $HOME/bin init airbornfoxx --config $
     ```
     p10k configure
     ```
-1. Install Alfred Dracula Theme (Double-click ```alfred/dracula.alfredappearance```)
+1. Install Alfred Theme & Workflows (Double-click each item in ```alfred/(themes|workflows)```)
 

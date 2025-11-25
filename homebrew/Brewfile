@@ -23,12 +23,15 @@ cask "cleanmymac"
 cask "dropbox"
 cask "font-meslo-lg-nerd-font"
 cask "google-chrome"
+cask "herd"
 cask "iterm2"
 cask "jetbrains-toolbox"
 cask "microsoft-office"
 cask "mysides"
 cask "spotify"
 cask "sublime-text"
+cask "tableplus"
+cask "tinkerwell"
 
 
 ###########################################################
